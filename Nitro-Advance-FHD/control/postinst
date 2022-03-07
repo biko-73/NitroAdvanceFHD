@@ -1,0 +1,13 @@
+#!/bin/sh
+echo " " 
+echo "*****************************************"   
+echo ""
+echo "   NitroAdvanceFHD By Kaleem_Club Team   "
+echo ""                                                    
+echo ".......skin successful installed........."
+echo ""
+echo " ....now select skin NitroAdvanceFHD....." 
+echo ""
+echo "*****************************************"   
+echo " "                                                       
+exit 0
