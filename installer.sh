@@ -20,7 +20,7 @@ rm -rf $SKINPATH >/dev/null 2>&1
 
 cd $TEMPATH
 set -e
-wget -q "https://raw.githubusercontent.com/biko-73/NitroAdvanceFHD-$version.tar.gz"
+wget -q "https://github.com/biko-73/NitroAdvanceFHD/raw/main/nitroadvancefhd-$version.tar.gz"
 
 tar -xzf nitroadvancefhd-"$version".tar.gz -C /tmp
 set +e
