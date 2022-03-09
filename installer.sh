@@ -20,7 +20,7 @@ rm -rf $SKINPATH >/dev/null 2>&1
 
 cd $TEMPATH
 set -e
-wget -q "http://ipkinstall.ath.cx/nitro/nitroadvancefhd-$version.tar.gz"
+wget -q "https://raw.githubusercontent.com/biko-73/NitroAdvanceFHD-$version.tar.gz"
 
 tar -xzf nitroadvancefhd-"$version".tar.gz -C /tmp
 set +e
