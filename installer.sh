@@ -29,7 +29,7 @@ if [ -f $MY_TMP_FILE ]; then
 	echo 'Extracting ...'
 	echo $MY_SEP
 	echo ''
-	tar -xvf $MY_TMP_FILE -C /
+	tar -xf $MY_TMP_FILE -C /
 	MY_RESULT=$?
 
 	rm -f $MY_TMP_FILE > /dev/null 2>&1
