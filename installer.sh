@@ -1,36 +1,20 @@
 #!/bin/sh
 #####################################################
-version=5.2
+version=5.0
 description="Have Fun With NitroAdvancedHD Skin !!!"
 #####################################################
 
-##############################################################################################################
-##
-## Script Purpose:
-##		Download .tar.gz file then extracts it to the root directory of the device..
-##
-##############################################################################################################
-
-
-##############################################################################################################
-# Manual Entry
-##############################################################################################################
-
+#####################################################
 PACKAGE_DIR='NitroAdvanceFHD/main'
 MY_FILE="NitroAdvanceFHD.tar.gz"
-
-##############################################################################################################
-# Auto
-##############################################################################################################
+#####################################################
 
 MY_MAIN_URL="https://raw.githubusercontent.com/biko-73/"
 MY_URL=$MY_MAIN_URL$PACKAGE_DIR'/'$MY_FILE
 MY_TMP_FILE="/tmp/"$MY_FILE
 
-# Remove previous file (if any)
 rm -f $MY_TMP_FILE > /dev/null 2>&1
 
-# Download package file
 MY_SEP='============================================================='
 echo $MY_SEP
 echo 'Downloading '$MY_FILE' ...'
@@ -38,9 +22,8 @@ echo $MY_SEP
 echo ''
 wget -T 2 $MY_URL -P "/tmp/"
 
-# Check download
 if [ -f $MY_TMP_FILE ]; then
-	# Install
+
 	echo ''
 	echo $MY_SEP
 	echo 'Extracting ...'
@@ -49,10 +32,8 @@ if [ -f $MY_TMP_FILE ]; then
 	tar -xvf $MY_TMP_FILE -C /
 	MY_RESULT=$?
 
-	# Remove Installation file
 	rm -f $MY_TMP_FILE > /dev/null 2>&1
 
-	# Result
 	echo ''
 	echo ''
 	if [ $MY_RESULT -eq 0 ]; then
@@ -62,8 +43,12 @@ if [ -f $MY_TMP_FILE ]; then
         echo "#   https://www.tunisia-sat.com/forums/forums/182/      #"
         echo "#########################################################"
         echo "#           your Device will RESTART Now                #"
-        echo "#########################################################"
-		if which systemctl > /dev/null 2>&1; then sleep 2; systemctl restart enigma2 else init 4; sleep 4; init 3; fi
+        echo "#########################################################"		
+		if which systemctl > /dev/null 2>&1; then
+			sleep 2; systemctl restart enigma2
+		else
+			init 4; sleep 4; init 3;
+		fi
 	else
 		echo "   >>>>   INSTALLATION FAILED !   <<<<"
 	fi;
@@ -78,5 +63,4 @@ else
 	echo "Download failed !"
 	exit 1
 fi
-
 # ------------------------------------------------------------------------------------------------------------
