@@ -4,53 +4,28 @@ version=5.1
 description="Have Fun With NitroAdvancedHD Skin !!!"
 #####################################################
 
-TEMPATH='/tmp'
-PLUGINPATH='/usr/lib/enigma2/python/Plugins/Extensions/NitroAdvanceFHD'
-SKINPATH='/usr/share/enigma2/NitroAdvanceFHD'
+##############################################################################################################
+##
+## Script Purpose:
+##		Download .tar.gz file then extracts it to the root directory of the device..
+##
+##############################################################################################################
 
-CHECK='/tmp/check'
-NITRO='/tmp/nitroadvancefhd/usr/*'
-NITROSKIN='/tmp/nitroadvancefhd/share/*'
 
-uname -m >$CHECK
+##############################################################################################################
+# Manual Entry
+##############################################################################################################
 
-# remove old version
-rm -rf $PLUGINPATH >/dev/null 2>&1
-rm -rf $SKINPATH >/dev/null 2>&1
+PACKAGE_DIR='NitroAdvanceFHD/main'
+MY_FILE="nitroadvancefhd.tar.gz"
 
-cd $TEMPATH
-set -e
-wget -q https://raw.githubusercontent.com/biko-73/NitroAdvanceFHD/main/nitroadvancefhd-$version.tar.gz
+##############################################################################################################
+# Auto
+##############################################################################################################
 
-tar -xzf nitroadvancefhd-"$version".tar.gz -C /tmp
-set +e
-rm -f nitroadvancefhd-"$version".tar.gz
-cd ..
-
-if grep -qs -i 'mips' cat $CHECK; then
-        echo "[ Your device is MIPS ]"
-elif grep -qs -i 'armv7l' cat $CHECK; then
-        echo "[ Your device is armv7l ]"
-elif grep -qs -i 'sh4' cat $CHECK; then
-        echo "[ Your device is sh4 ]"
-else
-        echo "###############################"
-        echo "## Your stb is not supported ##"
-        echo "###############################"
-        rm -r /tmp/nitroadvancefhd
-        rm -f $CHECK
-        exit 1
-        echo ""
-fi
-echo "[ Installing New Skin Update Please Wait ... ]"
-mkdir -p $PLUGINPATH
-cp -r $NITRO $PLUGINPATH
-mkdir -p $SKINPATH
-cp -r $NITROSKIN $SKINPATH
-sleep 2
-
-rm -r /tmp/nitroadvancefhd
-rm -f $CHECK
+MY_MAIN_URL="https://raw.githubusercontent.com/biko-73/"
+MY_URL=$MY_MAIN_URL$PACKAGE_DIR'/'$MY_FILE
+MY_TMP_FILE="/tmp/"$MY_FILE
 
 echo ""
 sync
@@ -61,6 +36,53 @@ echo "#   https://www.tunisia-sat.com/forums/forums/182/      #"
 echo "#########################################################"
 echo "#           your Device will RESTART Now                #"
 echo "#########################################################"
-killall -9 enigma2
-exit 0
-1
+
+# Remove previous file (if any)
+rm -f $MY_TMP_FILE > /dev/null 2>&1
+
+# Download package file
+MY_SEP='============================================================='
+echo $MY_SEP
+echo 'Downloading '$MY_FILE' ...'
+echo $MY_SEP
+echo ''
+wget -T 2 $MY_URL -P "/tmp/"
+
+# Check download
+if [ -f $MY_TMP_FILE ]; then
+	# Install
+	echo ''
+	echo $MY_SEP
+	echo 'Extracting ...'
+	echo $MY_SEP
+	echo ''
+	tar -xvf $MY_TMP_FILE -C /
+	MY_RESULT=$?
+
+	# Remove Installation file
+	rm -f $MY_TMP_FILE > /dev/null 2>&1
+
+	# Result
+	echo ''
+	echo ''
+	if [ $MY_RESULT -eq 0 ]; then
+		echo "   >>>>   SUCCESSFULLY INSTALLED   <<<<"
+		echo ''
+		echo "   >>>>         RESTARING         <<<<"
+		if which systemctl > /dev/null 2>&1; then sleep 2; systemctl restart enigma2 else init 4; sleep 4; init 3; fi
+	else
+		echo "   >>>>   INSTALLATION FAILED !   <<<<"
+	fi;
+	echo ''
+	echo '**************************************************'
+	echo '**                   FINISHED                   **'
+	echo '**************************************************'
+	echo ''
+	exit 0
+else
+	echo ''
+	echo "Download failed !"
+	exit 1
+fi
+
+# ------------------------------------------------------------------------------------------------------------
