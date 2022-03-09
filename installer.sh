@@ -1,6 +1,6 @@
 #!/bin/sh
 #####################################################
-version=5.0
+version=5.2
 description="Have Fun With NitroAdvancedHD Skin !!!"
 #####################################################
 
@@ -20,7 +20,7 @@ rm -rf $SKINPATH >/dev/null 2>&1
 
 cd $TEMPATH
 set -e
-wget -q "https://raw.githubusercontent.com/biko-73/NitroAdvanceFHD-$version.tar.gz"
+wget -q https://raw.githubusercontent.com/biko-73/NitroAdvanceFHD/main/nitroadvancefhd-$version.tar.gz
 
 tar -xzf nitroadvancefhd-"$version".tar.gz -C /tmp
 set +e
@@ -43,8 +43,6 @@ else
         echo ""
 fi
 echo "[ Installing New Skin Update Please Wait ... ]"
-#cp -a $NITRO $PLUGINPATH
-#cp -a $NITROSKIN $SKINPATH
 mkdir -p $PLUGINPATH
 cp -r $NITRO $PLUGINPATH
 mkdir -p $SKINPATH
@@ -65,3 +63,4 @@ echo "#           your Device will RESTART Now                #"
 echo "#########################################################"
 killall -9 enigma2
 exit 0
+1
