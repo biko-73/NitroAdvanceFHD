@@ -55,7 +55,7 @@ rm -f $CHECK
 echo ""
 sync
 echo "#########################################################"
-echo "#  NitroAdvanceFHD Skin $version INSTALLED SUCCESSFULLY #"
+echo "#  NitroAdvanceFHD Skin $version INSTALLED SUCCESSFULLY      #"
 echo "#                BY BIKO - support on                   #"
 echo "#   https://www.tunisia-sat.com/forums/forums/182/      #"
 echo "#########################################################"
