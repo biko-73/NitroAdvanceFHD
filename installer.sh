@@ -1,6 +1,6 @@
 #!/bin/sh
 #####################################################
-version=5.1
+version=5.2
 description="Have Fun With NitroAdvancedHD Skin !!!"
 #####################################################
 
