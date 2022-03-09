@@ -1,6 +1,6 @@
 #!/bin/sh
 #####################################################
-version=5.2
+version=5.1
 description="Have Fun With NitroAdvancedHD Skin !!!"
 #####################################################
 
@@ -20,11 +20,7 @@ rm -rf $SKINPATH >/dev/null 2>&1
 
 cd $TEMPATH
 set -e
-<<<<<<< HEAD
 wget -q https://raw.githubusercontent.com/biko-73/NitroAdvanceFHD/main/nitroadvancefhd-$version.tar.gz
-=======
-wget -q "https://github.com/biko-73/NitroAdvanceFHD/raw/main/nitroadvancefhd-$version.tar.gz"
->>>>>>> 0ac9d85920de6a1283476b248f3fdeedceb416c0
 
 tar -xzf nitroadvancefhd-"$version".tar.gz -C /tmp
 set +e
@@ -67,7 +63,4 @@ echo "#           your Device will RESTART Now                #"
 echo "#########################################################"
 killall -9 enigma2
 exit 0
-<<<<<<< HEAD
 1
-=======
->>>>>>> 0ac9d85920de6a1283476b248f3fdeedceb416c0
