@@ -15,6 +15,7 @@ Continuing to complete the Nitro Collection
 All thanks to the developer, Mr. Hussain (Fairbird) for his help in modifying and developing the Nitro Plugin to come out in such a wonderful way.
 
 - All thanks to the designer Oktus for his continuous support and designing (Virtual picon - Boot background – Spinner ….. and more)
+- All thanks to the RedouaneTM for help to developing upgrading skin fron plugin
 
 - New look of the sound bar has been designed
 - The current event (progress) bar was designed on the first and second infobars in a new innovative way
@@ -24,6 +25,5 @@ All thanks to the developer, Mr. Hussain (Fairbird) for his help in modifying an
 - Modify crypt info which work ok py2 and py3
 - Try to reduce pngs size.. To make skin lighter & faster 
 - Add tuner icons
-
 It was taken into Consideration not to put any logos of the team or its members (only in the about screen).
 ----------------------------------------------------------------------------------------------------------
