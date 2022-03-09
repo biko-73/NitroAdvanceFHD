@@ -27,16 +27,6 @@ MY_MAIN_URL="https://raw.githubusercontent.com/biko-73/"
 MY_URL=$MY_MAIN_URL$PACKAGE_DIR'/'$MY_FILE
 MY_TMP_FILE="/tmp/"$MY_FILE
 
-echo ""
-sync
-echo "#########################################################"
-echo "#  NitroAdvanceFHD Skin $version INSTALLED SUCCESSFULLY      #"
-echo "#                BY BIKO - support on                   #"
-echo "#   https://www.tunisia-sat.com/forums/forums/182/      #"
-echo "#########################################################"
-echo "#           your Device will RESTART Now                #"
-echo "#########################################################"
-
 # Remove previous file (if any)
 rm -f $MY_TMP_FILE > /dev/null 2>&1
 
@@ -66,9 +56,13 @@ if [ -f $MY_TMP_FILE ]; then
 	echo ''
 	echo ''
 	if [ $MY_RESULT -eq 0 ]; then
-		echo "   >>>>   SUCCESSFULLY INSTALLED   <<<<"
-		echo ''
-		echo "   >>>>         RESTARING         <<<<"
+        echo "#########################################################"
+        echo "#  NitroAdvanceFHD Skin $version INSTALLED SUCCESSFULLY      #"
+        echo "#                BY BIKO - support on                   #"
+        echo "#   https://www.tunisia-sat.com/forums/forums/182/      #"
+        echo "#########################################################"
+        echo "#           your Device will RESTART Now                #"
+        echo "#########################################################"
 		if which systemctl > /dev/null 2>&1; then sleep 2; systemctl restart enigma2 else init 4; sleep 4; init 3; fi
 	else
 		echo "   >>>>   INSTALLATION FAILED !   <<<<"
