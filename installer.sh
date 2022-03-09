@@ -17,7 +17,7 @@ description="Have Fun With NitroAdvancedHD Skin !!!"
 ##############################################################################################################
 
 PACKAGE_DIR='NitroAdvanceFHD/main'
-MY_FILE="nitroadvancefhd.tar.gz"
+MY_FILE="NitroAdvanceFHD.tar.gz"
 
 ##############################################################################################################
 # Auto
