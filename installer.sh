@@ -1,7 +1,7 @@
 #!/bin/sh
 #####################################################
 version=5.1
-description="Have Fun With NitroAdvancedHD Skin !!!"
+description="Small fix for sunny & yellow skins !!!"
 #####################################################
 
 #####################################################
