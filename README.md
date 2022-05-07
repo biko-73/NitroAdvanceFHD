@@ -2,6 +2,7 @@
  NITRO OE-Alliance Skin 
  
 V_5.0
+
 Skin Nitro Advanced... Our goal is to learn and develop for the better
 Continuing to complete the Nitro Collection
 - Now Nitro comes in 10 different colors, which are considered as plain colors, designed with a gradient of color tones with a smooth flow of colors
@@ -28,4 +29,14 @@ Continuing to complete the Nitro Collection
 - add backdrop to infobar
 
 -It was taken into Consideration not to put any logos of the team or its members (only in the about screen).
+----------------------------------------------------------------------------------------------------------
+V_5.1
+
+Small fix for sunny & yellow skins
+----------------------------------------------------------------------------------------------------------
+V_5.2
+addition of 2 skins
+
+interface_PURPLE(NEW)
+interface_RED(NEW)
 ----------------------------------------------------------------------------------------------------------
