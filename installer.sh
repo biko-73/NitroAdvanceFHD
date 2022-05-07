@@ -1,7 +1,7 @@
 #!/bin/sh
 #####################################################
 version=5.2
-description="Small fix for sunny & yellow skins !!!"
+description="add new interface PURPLE(NEW) RED(NEW) !!!"
 #####################################################
 
 #####################################################
