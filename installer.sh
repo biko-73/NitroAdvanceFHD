@@ -1,7 +1,7 @@
 #!/bin/sh
 #########################################################
 version=5.3
-description="add new interface Black-G, Black-R,RED(NEW)" !!!
+description="add new interface Black-G Black-R RED(NEW)" !!!
 
 #########################################################
 
