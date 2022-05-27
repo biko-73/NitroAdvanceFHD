@@ -1,7 +1,10 @@
 #!/bin/sh
 #########################################################
-version=5.2
-description="add new interface PURPLE(NEW) RED(NEW) !!!"
+version=5.3
+description="add new interface Black-G(NEW) !!!
+             add new interface Black-R(NEW)
+             add new interface RED    (NEW)"
+
 #########################################################
 
 #########################################################
