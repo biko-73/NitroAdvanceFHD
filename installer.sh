@@ -1,7 +1,7 @@
 #!/bin/sh
 #########################################################
-version=5.3
-description="add new interface Black-G, Black-R, RED(NEW)" !!!
+version=5.4
+description="Double addition to all skins to work by choosing from XtraEvent or Render_X" !!!
 
 #########################################################
 
