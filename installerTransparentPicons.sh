@@ -8,14 +8,33 @@ else
 	PLUGINPATH=/usr/lib64/enigma2/python/Plugins/Extensions/NitroAdvanceFHD
 fi
 
-## Remove old file from tmp directory
-[ -r /tmp/TransparentPicons.tar.gz ] && rm -f /tmp/TransparentPicons.tar.gz
+mkdir -p $PLUGINPATH/PICONS
 
-### Remove Currenty file from plugin
-rm -rf $PLUGINPATH/PICONS/emu
-rm -rf $PLUGINPATH/PICONS/piconSat
-rm -rf $PLUGINPATH/PICONS/piconProv
-rm -rf $PLUGINPATH/PICONS/piconCrypt
+### Checking if picons folder avinable on plugin
+if [ ! -d $PLUGINPATH/PICONS/emu ]; then
+	echo "Missing emu folder will be send it to plugin path"
+	cp -r $PLUGINPICONTMPPATH/emu $PLUGINPATH/PICONS > /dev/null 2>&1
+else
+	cp -u $PLUGINPICONTMPPATH/emu/* $PLUGINPATH/PICONS/emu > /dev/null 2>&1
+fi
+if [ ! -d $PLUGINPATH/PICONS/piconProv ]; then
+	echo "Missing piconProv folder will be send it to plugin path"
+	cp -r $PLUGINPICONTMPPATH/piconProv $PLUGINPATH/PICONS > /dev/null 2>&1
+else
+	cp -u $PLUGINPICONTMPPATH/piconProv/* $PLUGINPATH/PICONS/piconProv > /dev/null 2>&1
+fi
+if [ ! -d $PLUGINPATH/PICONS/piconSat ]; then
+	echo "Missing piconSat folder will be send it to plugin path"
+	cp -r $PLUGINPICONTMPPATH/piconSat $PLUGINPATH/PICONS > /dev/null 2>&1
+else
+	cp -u $PLUGINPICONTMPPATH/piconSat/* $PLUGINPATH/PICONS/piconSat > /dev/null 2>&1
+fi
+if [ ! -d $PLUGINPATH/PICONS/piconCrypt ]; then
+	echo "Missing piconCrypt folder will be send it to plugin path"
+	cp -r $PLUGINPICONTMPPATH/piconCrypt $PLUGINPATH/PICONS > /dev/null 2>&1
+else
+	cp -u $PLUGINPICONTMPPATH/piconCrypt/* $PLUGINPATH/PICONS/piconCrypt > /dev/null 2>&1
+fi
 
 # Download and install Transparent Picons
 cd /tmp
