@@ -1,11 +1,11 @@
 #!/bin/sh
 ##setup command=wget -q "--no-check-certificate" https://raw.githubusercontent.com/biko-73/NitroAdvanceFHD/main/installerWhitePicons.sh -O - | /bin/sh
 
-# Download and install Black Picons
+# Download and install White Picons
 cd /tmp
 set -e
 wget "https://github.com/biko-73/NitroAdvanceFHD//raw/main/WhitePicons.tar.gz"
-tar -xzf BlackPicons.tar.gz -C /
+tar -xzf WhitePicons.tar.gz -C /
 set +e
 cd ..
 

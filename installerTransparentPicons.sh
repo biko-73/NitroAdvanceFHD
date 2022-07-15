@@ -1,7 +1,7 @@
 #!/bin/sh
 ##setup command=wget -q "--no-check-certificate" https://raw.githubusercontent.com/biko-73/NitroAdvanceFHD/main/installerTransparentPicons.sh -O - | /bin/sh
 
-# Download and install Black Picons
+# Download and install Transparent Picons
 cd /tmp
 set -e
 wget "https://github.com/biko-73/NitroAdvanceFHD//raw/main/TransparentPicons.tar.gz"
