@@ -6,7 +6,7 @@
 cd /tmp
 set -e
 wget "https://github.com/biko-73/NitroAdvanceFHD//raw/main/BlackPicons.tar.gz"
-tar -xzf BlackPicons.tar.gz -C /
+tar xzvpf /tmp/BlackPicons.tar.gz  -C / 
 set +e
 cd ..
 
